@@ -1,0 +1,874 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Jardin de niños Bambi</title> 	
+	<link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF5mfFM6UXj6N1iO44d/h23//8sCFEPFYiJHvZGOptKhnrDK5GNxhv9XXmb/U1tjz1ZhbpmlucynAAAAAAAAAABNaZNyR361/0mAt/9jfaXfTGudRRI/w2YSOr1aFzKZfycrQskMDxf/GRod/0NCRvwPEhbgGRwhOAAAAACkkJBJhoCQ3XqJo/+IiZf+bnub8DpmqowSPsN/F0fCQxtIrrM4QG/BIyQx/0Q9Q/9RS1P/X1hm3jg1RjWgjY9Kyby6ysXBxf9/hpr/cG+I/GV2rME5acFqEkHKrBlRxFweVLvTLzV03yMiLP9jWWPpeG51eIF3hTPq3P8Ct6OiLbe8xYdwkbrzVou9/253kvmIe4p+HEfELxJF0t0XTMPaHUGr+1Nglf9fXG//cWuF176zuRkAAAAAAAAAAAAAAACGuNk1iZay6YGbuPxzjKurN3PDfBhXzMARRdT8FkLF/xhNzf8pbNn/NFe57TNQqdwua70wAAAAAAAAAAAAAAAAqtflB4yaxkJQbLm2K2LHrCRw0usWX9n/EFTn/xpl5f8ic+f6I3LkyBpQxkMVM6SAJ1q7ZQAAAAAAAAAAAAAAAAAAAAAHJZ8BEEzMWhJKy0g0i9qYI3Hh/xNb6fsjbuK6LXPaVyxozhcAAAAAGTizBSFFrRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQpTXWC+E5vYTVuG3MGbCEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANFqPXjF1z9UdXM75E0LJoygvZwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACBPrFElZtf3K1az/xpIws0XQr8WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYUMt6I13S/0t3sv8qXMH8Fz7BbgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjiimBsxn/8oZbz/I02t/x9JvdonZs4kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB40pE8bNrP3Gje1/B49r/c2ad7/SIzkegAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdPao6G0jH3xxHxW8sXMJgP2zm6Vh/3aIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHzVqFx1Ai1MeYNoFR7H7AjFPmVk3S3tVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5wAAAOPBAADBgQAAgocAAIYHAADEBwAA4BcAAPh/AAD8/wAA+P8AAPj/AAD4/wAA8H8AAPh/AAD7PwAA//8AAA==" rel="icon" type="image/x-icon" />
+    
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+	
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+	<!-- Pricing -->
+	<link rel="stylesheet" href="css/pricing.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	
+	<!-- reCAPTCHA -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<!-- Email Js-->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('2j3J89dLm3efMGS5g');
+        })();
+    </script>
+    <script type="text/javascript">
+		window.onload = function() {
+			document.getElementById('contact-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+				email = document.getElementById('email').value;
+				var domain = email.substring(email.lastIndexOf("@") +1);
+				console.log(domain);
+				const validDomains = ['yahoo.com', 'gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com.mx']
+				if (validDomains.includes(domain)) {
+					// generate a five digit number for the contact_number variable
+					this.contact_number.value = Math.random() * 100000 | 0;
+					// these IDs from the previous steps
+					emailjs.sendForm('service_mk6egk9', 'template_tsxh0bf', this)
+						.then(function() {
+							console.log('SUCCESS!');
+							alert("Cita enviada");
+							document.getElementById('contact-form').reset();
+						}, function(error) {
+							console.log('FAILED...', error);
+							alert("Dominio de correo invalido");
+						});
+				}
+            });
+        }
+    </script>
+	
+    <script>
+        $(document).ready(function(){
+            $("#myModal").modal('show');
+        });
+    </script>
+	
+    <meta name="description" content="Preescolar privada, Jardin De Niños Bambi, Fotos, Instalaciones, Kinder, Azcapotzalco, Sistema, Informes, Teléfonos, Dirección, turno: matutino, Rosario">
+	</head>
+	
+	<body>
+    
+   
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-right">
+						<p class="site"><font color="black">www.jardindeninosbambi.com</font></p>
+						<p class="num">Tel: 52-36-44-49</p>
+						<ul class="fh5co-social">
+							<li><a href="https://www.facebook.com/Jard%C3%ADn-de-Ni%C3%B1os-Bambi-108229697585763/?modal=admin_todo_tour"><i class="icon-facebook2"></i></a></li>
+							<li><a href="https://twitter.com/NinosBambi"><i class="icon-twitter2"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top-menu" style="background-image: url(images/fondo.jpg);">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-1">
+						<div ></div><!--Aqui va una imagen del logo del kinder-->
+					</div>
+					<div class="col-sm-11 text-right menu-1">
+						<ul>
+							<li class="active"><a href="#" data-toggle="modal" data-target="#myModal">Evidencias de aprendizaje Covid-19</a></li>
+							<li><a href="#nosotros">Nosotros</a></li>
+							<li><a href="#programa">Programa</a></li>
+							<li><a href="#eventos">Eventos</a></li>
+							<li><a href="#galeria">Galería</a></li>
+							<li><a href="#contacto">Ubicación y Contacto</a></li>						
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<div style="background-image: url(images/fondo.jpg);">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center slider-text"> 
+			   		<div class="slider-text-inner">
+			   			<h1>Evidencias de Aprendizaje</h1>
+			   			<p style="color: black;">Las Evidencias de Aprendizaje que se presentan se refieren a la generación que por las circunstancias del Covid-19 tuvieron toda su educación preescolar con clases a distancia. Cursando desde preescolar 1 hasta preescolar 3 en nuestro Colegio.</p>
+			   			<div class="row">
+			   				<div class="col-md-6">
+			   					<iframe width="560" height="315" src="https://www.youtube.com/embed/qLGe3qMMxFw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			   				</div>
+			   				<div class="col-md-6">
+			   					<iframe width="560" height="315" src="https://www.youtube.com/embed/LVI2s_O9T3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			   				</div>
+			   				<div class="col-md-6">
+			   					<iframe width="560" height="315" src="https://www.youtube.com/embed/D1hV4HUSKW8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			   				</div>
+			   				<div class="col-md-6">
+			   					<iframe width="560" height="315" src="https://www.youtube.com/embed/kdtB_dO6m70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			   				</div>
+			   				<div class="col-md-6">
+			   					<iframe width="560" height="315" src="https://www.youtube.com/embed/VaRbgVGHklI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			   				</div>
+			   				<div class="col-md-6">
+			   					<iframe width="560" height="315" src="https://www.youtube.com/embed/A6upjPZGgCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			   				</div>
+			   				<div class="col-md-6">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/bfEcwBMJAJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<div class="col-md-6">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/wN1gjYZYB6E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+			   			</div>
+			   			<p style="color: black;">Ciclo Escolar 2021-2022 únicamente clases a distancia</p>
+			   		</div>
+			   	</div>
+		</div>
+	</div>
+</div>
+
+	<aside id="fh5co-hero">
+		<div class="flexslider">
+			<ul class="slides">
+		   	<li style="background-image: url(images/fondo.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Ciclo Escolar 2021-2022</h1>
+			   					<iframe width="100%" height="68%"  src="https://www.youtube.com/embed/YbrvVPtLFlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/slider3.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Instalaciones Idóneas</h1>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/entradabambi.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Acceso ordenado y seguro</h1>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/slider2.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Patio con dimensiones adecuadas</h1>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>	
+		   	<li style="background-image: url(images/salon.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Grupos reducidos de máximo 15 alumnos</h1>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/camaras.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Sistema de Cámaras de Seguridad grabando las 24 hrs</h1>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/extintor.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Detectores de humo y extintores</h1>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/convenios.png);">
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Convenios Académicos con Primarias de Prestigio</h1>
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/slider1.jpg);"></li>		   	
+		  	</ul>
+	  	</div>
+	</aside>
+</div>
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog"  style="width: 850px;">
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Evidencias de aprendizaje en tiempos de Covid-19</h4>
+	      </div>
+	      <div class="modal-body" align="justify">
+	          <p align="center"><iframe allowfullscreen="" class="BLOG_video_class" height="480" src="https://www.youtube.com/embed/A1HVYobTm0s" width="680" youtube-src-id="A1HVYobTm0s"></iframe></p>
+	        <p>
+	        El compromiso del Jardin de Niños Bambi es que nuestros alumnos(as) aprendan a pesar de situaciones adversas... <br>Nuestra experiencia de más de 40 años nos permite tener el personal, actividades, estrategias y avances tecnológicos para que su hijo(a) realmente aprenda... por lo que <br>"ningún niño(a) se queda atrás, ni ningún niño(a) se queda fuera de adquirir  aprendizajes".
+	        </p><p>
+			En estos momentos díficiles, en donde los padres de familia en casa apoyan para el aprendizaje de sus hijos(as) la inversión que hacen con el pago de colegiaturas se vuelve realmente fundamental... por lo que en el Jardin de Niños Bambi el aprendizaje de su hijo es nuestro único compromiso.
+			</p>
+			<div class="modal-body" align="center">
+			Ejemplos de los aprendizajes adquiridos por los alumnos(as) de 3° preescolar al mes de Diciembre del 2020
+			</div>
+			<p>Con este trabajo se muestra que se adquirieron los siguientes aprendizajes y habilidades en tiempos de Covid-19:</p>
+			<div class="modal-body" align="center">
+				<p>
+				Capacidad para realizar textos literarios<br>
+				Estructuración de ideas<br>
+				Razonamiento<br>
+				Trazo correcto de las letras<br>
+				Capacidad para realizar expresiones artísticas</p>
+			<a class="gallery" style="height:700px; background-image: url(images/Victor.jpg);"></a><br>
+			<a class="gallery" style="height:700px; background-image: url(images/Leonora.jpg);"></a><br>
+			<a class="gallery" style="height:700px; background-image: url(images/Sebastian.jpeg);"></a><br>
+			<a class="gallery" style="height:700px; background-image: url(images/evidencia3.jpg);"></a><br>
+			<a class="gallery" style="height:700px; background-image: url(images/evidencia4.jpg);"></a><br>
+			<a class="gallery" style="height:700px; background-image: url(images/evidencia6.png);"></a><br>
+			<a class="gallery" style="height:700px; background-image: url(images/evidencia7.jpg);"></a><br>
+			<a class="gallery" style="height:700px; background-image: url(images/evidencia8.jpg);"></a><br>
+			<a class="gallery" style="height:400px; background-image: url(images/evidencia9.jpg);"></a><br>
+			</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+	      </div>
+	    </div>
+	  </div>
+	 </div>
+	<div id="fh5co-course-categories">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading" id="nosotros">
+					<h2>Nosotros</h2>
+					<p>Ternura y Educación desde 1989</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="icon-shop"></i>
+						</span>
+						<div class="desc">
+							<h3><a>Quiénes somos</a></h3>
+							<p>El Jardin de Niños Bambi es una institución que implementa la mejora continua para asegurar su calidad educativa. Con más de 40 años de experiencia.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="icon-heart4"></i>
+						</span>
+						<div class="desc">
+							<h3><a>Misión</a></h3>
+							<p>Desarrollar el Intelecto e Inteligencia de nuestros alumnos(as) para que a través de su vida logren tomar las mejores decisiones, por medio del análisis de múltiples alternativas.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="icon-banknote"></i>
+						</span>
+						<div class="desc">
+							<h3><a>Visión</a></h3>
+							<p>Formar niños reflexivos, creativos y autónomos, comprometidos con sí mismos, con sus ideales y con la familia.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="icon-lab2"></i>
+						</span>
+						<div class="desc">
+							<h3><a>Niveles Educativos</a></h3>
+							<p>Impartimos los tres grados de educación preescolar y estamos incorporados a la Secretaria de Educación Pública (Inscripciones Abiertas durante todo el ciclo escolar)</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="icon-photo"></i>
+						</span>
+						<div class="desc">
+							<h3><a>Sistema de Enseñanza</a></h3>
+							<p>Los grupos de trabajo son reducidos proporcionando una atención personalizada y apoyo psicopedagógico.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="icon-home-outline"></i>
+						</span>
+						<div class="desc">
+							<h3><a>Personal</a></h3>
+							<p>Profesoras y Licenciadas en Educación Preescolar comprometidas y cariñosas</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="icon-bubble3"></i>
+						</span>
+						<div class="desc">
+							<h3><a>Instalaciones</a></h3>
+							<p>Instalaciones impecables y adaptadas para un jardín de niños seguro.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="icon-world"></i>
+						</span>
+						<div class="desc">
+							<h3><a>Servicio</a></h3>
+							<p>Contamos con redes sociales para dar avisos importantes.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-counter" class="fh5co-counters" style="background-image: url(images/img_bg_4.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="col-md-3 col-sm-6 text-center animate-box">
+							<span class="icon"><i class="icon-world"></i></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="975" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="fh5co-counter-label">Exalumnos</span>
+						</div>
+						<div class="col-md-3 col-sm-6 text-center animate-box">
+							<span class="icon"><i class="icon-bulb"></i></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="4" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="fh5co-counter-label">Clases Diferentes</span>
+						</div>
+						<div class="col-md-3 col-sm-6 text-center animate-box">
+							<span class="icon"><i class="icon-study"></i></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="1989" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="fh5co-counter-label">Impartiendo clases desde </span>
+						</div>
+						<div class="col-md-3 col-sm-6 text-center animate-box">
+							<span class="icon"><i class="icon-head"></i></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="5" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="fh5co-counter-label">Eventos Importantes</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-course">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading" id="programa">
+					<h2>Programa</h2>
+					<p>Los aprendizajes esperados señalan de manera sintética conocimientos, habilidades, actitudes y valores que todos los alumnos deben alcanzar como resultado de las actividades realizadas durante los tres años de educación preescolar.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a class="course-img" style="background-image: url(images/k1.png);">
+						</a>
+						<div class="desc">
+							<h3><a>Kinder 1</a></h3>
+							<p>Adquirirán confianza, seguridad, percepción de si mismos al integrarse en un ambiente socializador desarrollando habilidades de conversación e intercambio de ideas.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a class="course-img" style="background-image: url(images/k2.png);">
+						</a>
+						<div class="desc">
+							<h3><a>Kinder 2</a></h3>
+							<p>Practica hábitos de prelectura, registra, socializa, clasifica, inventa y resuelve problemas matemáticos. Observa y cuida el medio ambiente.<br><br><br><br></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a class="course-img" style="background-image: url(images/k3.png);">
+						</a>
+						<div class="desc">
+							<h3><a>Kinder 3</a></h3>
+							<p>Resuelven problemas matemáticos y adquieren la capacidad lectora para comprender diversos textos. Entienden la importancia del respeto y la empatía hacia los demás.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a class="course-img" style="background-image: url(images/ingles1.png);">
+						</a>
+						<div class="desc">
+							<h3><a>Inglés</a></h3>
+							<p>El propósito de esta clase es que los estudiantes se sensibilicen y familiaricen con una lengua distinta a la materna. Sus conocimientos adquiridos permiten destacar en el tradicional Spelling Bee<br></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a class="course-img" style="background-image: url(images/compu.png);">
+						</a>
+						<div class="desc">
+							<h3><a>Computación</a></h3>
+							<p>Los estudiantes aprenderán conceptos básicos de una hoja de cálculo, procesador de textos e inserción de imágenes, para que vean a la computadora como una herramienta para procesar información y no cómo un objeto para videojuegos.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="course">
+						<a class="course-img" style="background-image: url(images/Ef.png);">
+						</a>
+						<div class="desc">
+							<h3><a>Educación Fisica</a></h3>
+							<p>La Educación Física es una forma de intervención pedagógica que contribuye a la formación integral de niñas, niños y adolescentes al desarrollar su motricidad e integrar su corporeidad.<br><br></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-testimonial" style="background-image: url(images/school.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<h2><span>Testimonios</span></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row animate-box">
+						<div class="owl-carousel owl-carousel-fullwidth">
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<div class="user" style="background-image: url(images/estudiante.svg);"></div>
+									<span>Alumno<br><small>Alumno</small></span>
+									<blockquote>
+										<p>&ldquo;Me gusta mucho ir a jugar con mis amigos y cantar canciones en inglés.&rdquo;<br><br><br></p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<div class="user" style="background-image: url(images/padres.png);"></div>
+									<span>Papá<br><small>Padre de Familia</small></span>
+									<blockquote>
+										<p>&ldquo;Excelente opción para los peques, muy niña salió fascinada de su Kinder.&rdquo;<br><br><br></p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony-slide active text-center">
+									<div class="user" style="background-image: url(images/profesor.png);"></div>
+									<span>Profesor<br><small>Profesora</small></span>
+									<blockquote>
+										<p>&ldquo;Existe libertad de cátedra para enseñar a mis alumnos con responsabilidad y cumpliendo con los objetivos del programa.&rdquo;<br><br></p>
+									</blockquote>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-blog">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading" id="eventos">
+					<h2>Eventos</h2>
+					<p>Multiples eventos y fechas importantes en el ciclo escolar</p>
+				</div>
+			</div>
+			<div class="col-md-4 animate-box">
+					<div class="fh5co-event">
+						<div class="date text-center"><span>16<br>Septiembre</span></div>
+						<h3><a>Dia de la Independencia</a></h3>
+						<p>El 16 de Septiembre de 1810 fue el día en el que se consumó la independencia de México, la cual puso final al dominio Español.</p>
+					</div>
+				</div>
+			<div class="col-md-4 animate-box">
+					<div class="fh5co-event">
+						<div class="date text-center"><span>12<br>Octubre</span></div>
+						<h3><a>Descubrimiento de America</a></h3>
+						<p>Conmemoración del descubrimiento de América por el navegante Cristóbal Colón en 1492.</p>
+					</div>
+				</div>
+			<div class="col-md-4 animate-box">
+					<div class="fh5co-event">
+						<div class="date text-center"><span>20<br>Diciembre</span></div>
+						<h3><a>Pastorela</a></h3>
+						<p>La pastorela es una obra reguetonera forma musical de origen pastorigre.<br><br><br></p>
+					</div>
+				</div>
+			<div class="row row-padded-mb">
+				<div class="col-md-4 animate-box">
+					<div class="fh5co-event">
+						<div class="date text-center"><span>16<br>Marzo</span></div>
+						<h3><a>Natalicio de Benito Juárez</a></h3>
+						<p>Cada 21 de marzo, además del inicio de la estación de la primavera, se festeja el natalicio de Benito Juárez, también llamado el “Benemérito de las Américas”, uno de los personajes más importantes en la historia de México.</p>
+					</div>
+				</div>
+			<div class="col-md-4 animate-box">
+					<div class="fh5co-event">
+						<div class="date text-center"><span>30<br>Abril</span></div>
+						<h3><a>Dia del niño</a></h3>
+						<p>El Día del Niño es una fecha conmemorativa que se celebra anualmente en honor de los niños.</p>
+					</div>
+				</div>
+			<div class="col-md-4 animate-box">
+					<div class="fh5co-event">
+						<div class="date text-center"><span>10<br>Mayo</span></div>
+						<h3><a>Día de las Madres</a></h3>
+						<p>El Día de la Madre es una festividad que se celebra en honor de las madres en gran parte del mundo, en diferentes fechas del año según el país. </p>
+						
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+
+	
+		<div id="fh5co-gallery" class="fh5co-bg-section">
+		<div class="row text-center" id="galeria">
+			<h2><span>Galería</span></h2>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/reyes.png);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/sombrero.jpg);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/guardia.jpg);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/pastorela.png);"></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/maestra.png);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/tambores.png);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/biblioteca.jpg);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/pesebre.jpg);"></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/pelota.jpg);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/baile.png);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/libro.jpg);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/material.jpg);"></a>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/boliche.jpg);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/equilibrio.jpg);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/colchonetas.jpg);"></a>
+			</div>
+			<div class="col-md-3 col-padded">
+				<a class="gallery" style="background-image: url(images/fachadakinder.png);"></a>
+			</div>
+		</div>	
+	</div>
+
+<div id="fh5co-contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-md-push-1 animate-box">
+					
+					<div class="fh5co-contact-info" id="contacto">
+						<h3>Información de Contacto</h3>
+						<ul>
+							<li class="phone"><a href="tel://52364449">Telefono: 52-36-44-49</a></li>
+							<li class="address"><a href="https://www.google.com/maps/place/Jardin+de+Ni%C3%B1os+%22Bambi%22/@19.5059206,-99.2096572,15z/data=!4m2!3m1!1s0x0:0xda53c787db74872b?sa=X&ved=2ahUKEwjf4f663OTpAhVRnq0KHfXtCDYQ_BIwCnoECA8QCA">Av Hacienda de Narvarte #200, Prados del Rosario,<br>Azcapotzalco Ciudad de México
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15043.322589819662!2d-99.2096572!3d19.5059206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xda53c787db74872b!2sJardin%20de%20Ni%C3%B1os%20%22Bambi%22!5e0!3m2!1ses-419!2smx!4v1591753745446!5m2!1ses-419!2smx" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></li>
+							<li class="email"><a href="kinderbambi2020@gmail.com">kinderbambi2020@gmail.com</a></li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="col-md-6 animate-box">
+					<h3>Contactanos</h3>
+					<form id="contact-form">
+						<input type="hidden" name="contact_number">
+						<div class="row form-group">
+							<div class="col-md-6">
+								<!-- <label for="fname">First Name</label> -->
+								<input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre(s)" required>
+							</div>
+							<div class="col-md-6">
+								<!-- <label for="lname">Last Name</label> -->
+								<input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos" required>
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="email">Email</label> -->
+								<input type="text" id="email" name="email" class="form-control" placeholder="Dirección de correo" required>
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="subject">Subject</label> -->
+								<input type="text" id="motivo" name="motivo" class="form-control" placeholder="Agende su cita para informes, proceso de inscripción y costo de Colegiaturas" required>
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="message">Message</label> -->
+								<textarea name="message" id="mensaje" name="mensaje" cols="30" rows="10" class="form-control" placeholder="Mensaje" required></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							 <div class="g-recaptcha" data-sitekey="6LdwzBAgAAAAANGSzZ6R02yqi8CapWY3eUjL77Be"></div> 
+							<input type="submit" value="Enviar" class="btn btn-primary" >
+						</div>
+
+					</form>		
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
+		<div class="overlay" style="background-image: url(images/fondo.jpg);"></div>
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-3 fh5co-widget">
+					<h3><font color="black">Sobre Nosotros</font></h3>
+					<p><font color="black">Av Hacienda de Narvarte #200, Prados del Rosario, Azcapotzalco Ciudad de México. Telefono: 52-36-44-49. Correo: kinderbambi2020@gmail.com</font></p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+					<h3><font color="black">Redes</font></h3>
+					<ul class="fh5co-footer-links">
+						<li><a href="https://www.facebook.com/Jard%C3%ADn-de-Ni%C3%B1os-Bambi-108229697585763/?modal=admin_todo_tour"><font color="black">Facebook</font></a></li>
+						<li><a href="https://twitter.com/NinosBambi"><font color="black">Twitter</font></a></li>
+					</ul>
+				</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block"><font color="black"> &copy; 2020. All Rights Reserved.</font></small> 
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Count Down -->
+	<script src="js/simplyCountdown.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+	<script>
+    var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+
+    // default example
+    simplyCountdown('.simply-countdown-one', {
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate()
+    });
+
+    //jQuery example
+    $('#simply-countdown-losange').simplyCountdown({
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate(),
+        enableUtc: false
+    });
+	</script>
+    <!--<script type="text/javascript">
+    	$(document).ready(function() {
+        	$('#myModal').modal('show');
+    });
+	</script> -->
+	
+	 <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v10.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="108229697585763"
+        theme_color="#ff7e29"
+        logged_in_greeting="Hola. ¿Como te podemos ayudar?"
+        logged_out_greeting="Hola. ¿Como te podemos ayudar?">
+      </div>
+    
+	
+	</body>
+</html>
+
